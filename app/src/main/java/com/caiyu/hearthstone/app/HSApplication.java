@@ -2,6 +2,7 @@ package com.caiyu.hearthstone.app;
 
 import android.app.Application;
 
+import com.caiyu.hearthstone.model.dao.DaoLoader;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
@@ -13,5 +14,6 @@ public class HSApplication extends Application {
     public void onCreate() {
         super.onCreate();
         LeakCanary.install(this);
+        DaoLoader.init(this);
     }
 }

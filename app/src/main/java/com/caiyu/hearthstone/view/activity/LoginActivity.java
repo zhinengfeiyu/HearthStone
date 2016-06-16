@@ -7,6 +7,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.caiyu.hearthstone.R;
+import com.caiyu.hearthstone.model.daomanager.CardDaoManager;
+import com.caiyu.hearthstone.model.entity.CardEntity;
 import com.caiyu.hearthstone.presenter.impl.LoginPresenterImpl;
 import com.caiyu.hearthstone.presenter.presenter.LoginPresenter;
 import com.caiyu.hearthstone.view.view.ILoginView;
@@ -37,7 +39,8 @@ public class LoginActivity extends BaseActivity implements ILoginView {
 
     @Override
     public void afterViewCreated() {
-
+        CardDaoManager cardDaoManager = new CardDaoManager();
+        cardDaoManager.addData(new CardEntity(1L, "森金持盾卫士", "基础", 4, "中立", "随从", 3, 5, "嘲讽"));
     }
 
     @OnClick(R.id.loginBtn)
